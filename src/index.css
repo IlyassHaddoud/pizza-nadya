@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: blueviolet;
+}
+
+.app {
+  max-width: 80rem;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  min-height: 8vh;
+  justify-content: start;
+  align-items: center;
+}
+
+.home h1 {
+  letter-spacing: 4px;
+  font-size: clamp(0.5rem, 1.5vw + 1rem, 3rem);
+}
+
+.header .logo img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.header .brand {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 70rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.home button {
+  outline: none;
+  width: 30%;
+  height: 3rem;
+  border-style: solid;
+  border-radius: 30px;
+  border-color: white;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+ul {
+  margin-block: 2%;
+}
+
+li {
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+
+li.activated {
+  text-decoration: line-through;
+}
+
+.topping button {
+  outline: none;
+  width: 20%;
+  height: 2rem;
+  border-style: solid;
+  border-radius: 30px;
+  border-color: white;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.qst {
+  margin-bottom: 5%;
+}
+
+@media screen and (width <= 768px) {
+  .home h1 {
+    text-align: center;
+  }
+
+  .home button {
+    width: 50%;
+    font-size: clamp(1rem, 1vh + 0.5rem, 10rem);
+  }
+  .topping button {
+    width: 55%;
+  }
+}
