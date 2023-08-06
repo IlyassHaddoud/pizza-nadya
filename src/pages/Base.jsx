@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Base = ({ order, setBase }) => {
   const step = "Step 1: Choose Your Base";
@@ -12,11 +13,17 @@ const Base = ({ order, setBase }) => {
     "Wrapping It Up",
   ];
   return (
-    <div className="base container">
+    <motion.div
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeIn" }}
+      className="base container"
+    >
       <div className="qst">{step}</div>
       <ul>
         {bases.map((base) => (
-          <li
+          <motion.li
+            whileHover={{ scale: 1.3 }}
             onClick={() => {
               setBase(base);
               e.target.classList.toggle("activated");
@@ -24,10 +31,10 @@ const Base = ({ order, setBase }) => {
             key={base}
           >
             <Link to="/topping">{base}</Link>
-          </li>
+          </motion.li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 

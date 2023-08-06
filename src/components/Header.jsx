@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <div className="header">
+    <motion.div
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="header"
+    >
       <div className="logo">
         <Link to="/">
           <img src={logo} />
@@ -12,7 +18,7 @@ const Header = () => {
       <div className="brand">
         <Link to="/">Pizza Nadya</Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Topping = ({ order, setToppings }) => {
   const [selectedTopping, setSelectedToppings] = useState([]);
@@ -30,11 +31,17 @@ const Topping = ({ order, setToppings }) => {
   }, [selectedTopping]);
 
   return (
-    <div className="topping container">
+    <motion.div
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeIn" }}
+      className="topping container"
+    >
       <div className="qst">{step}</div>
       <ul>
         {toppings.map((topping) => (
-          <li
+          <motion.li
+            whileHover={{ scale: 1.3 }}
             key={topping}
             onClick={(e) => {
               getToppings(topping);
@@ -42,13 +49,13 @@ const Topping = ({ order, setToppings }) => {
             }}
           >
             {topping}
-          </li>
+          </motion.li>
         ))}
       </ul>
       <button>
         <Link to="/order">order</Link>
       </button>
-    </div>
+    </motion.div>
   );
 };
 
